@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Zodiac Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🐭 Zodiac Explorer</h1>
+                <div class="header-controls">
+                    <!-- Language Toggle -->
+                    <div class="control-group">
+                        <button class="lang-toggle" id="langToggle" title="Toggle language">
+                            <span class="lang-label">EN</span>
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <div class="control-group">
+                        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                            <span class="theme-icon">☀️</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Filters Section -->
+            <section class="filters-section">
+                <div class="filters-wrapper">
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search zodiac..."
+                        >
+                        <span class="search-icon">🔍</span>
+                    </div>
+
+                    <!-- Element Filter -->
+                    <div class="filter-container">
+                        <label for="elementFilter" class="filter-label">Filter by Element:</label>
+                        <select id="elementFilter" class="element-filter">
+                            <option value="">All Elements</option>
+                            <option value="Metal">Metal</option>
+                            <option value="Wood">Wood</option>
+                            <option value="Water">Water</option>
+                            <option value="Fire">Fire</option>
+                            <option value="Earth">Earth</option>
+                        </select>
+                    </div>
+
+                    <!-- Clear Filters -->
+                    <button id="clearFilters" class="clear-filters-btn">Clear Filters</button>
+                </div>
+            </section>
+
+            <!-- Cards Grid -->
+            <section class="cards-section">
+                <div class="zodiac-grid" id="zodiacGrid">
+                    <!-- Zodiac cards will be generated here -->
+                </div>
+            </section>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <p>No zodiac signs match your search. Please try again.</p>
+            </div>
+        </main>
+
+        <!-- Detail Panel (Slide-in) -->
+        <aside id="detailPanel" class="detail-panel">
+            <div class="detail-content">
+                <button class="close-btn" id="closePanel">✕</button>
+                
+                <div class="detail-icon-wrapper">
+                    <div class="detail-icon" id="detailIcon">🐭</div>
+                </div>
+
+                <h2 class="detail-name">
+                    <span id="detailNameEn">Rat</span>
+                    <span id="detailNameZh">鼠</span>
+                </h2>
+
+                <div class="detail-info">
+                    <div class="info-item">
+                        <span class="info-label">Element:</span>
+                        <span id="detailElement" class="element-badge">Water</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Years:</span>
+                        <span id="detailYears">1900, 1912, 1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Personality:</span>
+                        <p id="detailPersonality">Intelligent and adaptable, rats are quick-witted and resourceful.</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Lucky Numbers:</span>
+                        <span id="detailLucky">2, 3</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Lucky Colors:</span>
+                        <span id="detailColors">Gold, Blue</span>
+                    </div>
+                </div>
+
+                <div class="detail-animation"></div>
+            </div>
+        </aside>
+
+        <!-- Overlay (for closing detail panel) -->
+        <div id="overlay" class="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
