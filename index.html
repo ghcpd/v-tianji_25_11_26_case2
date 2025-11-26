@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>12 Zodiac Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">12 Zodiac Dashboard</div>
+    <div class="controls">
+      <div class="control search">
+        <input id="searchInput" type="search" placeholder="Search (EN/中文)" aria-label="Search" />
+      </div>
+      <div class="control">
+        <select id="elementFilter">
+          <option value="all">All Elements</option>
+        </select>
+      </div>
+      <div class="control">
+        <button id="langToggle" aria-pressed="false">中文</button>
+      </div>
+      <div class="control">
+        <button id="themeToggle" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="zodiacGrid" class="grid"></section>
+  </main>
+
+  <div id="detailPanel" class="detail-panel" aria-hidden="true">
+    <div class="detail-inner">
+      <button id="closeDetail" class="close">✕</button>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <template id="zodiac-card-template">
+    <article class="card" tabindex="0">
+      <div class="card-media">
+        <div class="icon">🐀</div>
+      </div>
+      <div class="card-body">
+        <h3 class="name-en">Rat</h3>
+        <p class="name-cn">鼠</p>
+      </div>
+      <div class="tooltip">Quick and resourceful</div>
+    </article>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
