@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>12 Zodiac – Interactive Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="app-header">
+        <div class="brand">
+          <h1 data-i18n="title">12 Zodiac</h1>
+          <small data-i18n="subtitle">Explore the Chinese Zodiac — Rat to Pig</small>
+        </div>
+
+        <div class="controls">
+          <div class="control search">
+            <input id="searchInput" type="search" placeholder="Search name or trait..." aria-label="Search" />
+          </div>
+
+          <div class="control filter">
+            <select id="elementFilter" aria-label="Filter by element">
+              <option value="all" data-i18n="all">All Elements</option>
+              <option value="Metal">Metal</option>
+              <option value="Wood">Wood</option>
+              <option value="Water">Water</option>
+              <option value="Fire">Fire</option>
+              <option value="Earth">Earth</option>
+            </select>
+          </div>
+
+          <div class="control toggles">
+            <div class="toggle-group">
+              <label class="toggle" title="language">
+                <button id="langToggle" class="btn small">EN / 中文</button>
+              </label>
+            </div>
+
+            <div class="toggle-group">
+              <label class="switch" title="Theme">
+                <input id="themeToggle" type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="grid" id="grid" aria-live="polite"></section>
+        <!-- status / announcer for screen readers -->
+        <div id="status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+      </main>
+
+      <!-- Slide-in detail panel -->
+      <aside id="detailPanel" class="detail-panel" aria-hidden="true">
+        <button id="closePanel" class="close-btn" aria-label="Close">✕</button>
+        <div class="detail-inner">
+          <div id="detailIcon" class="detail-icon">🐁</div>
+          <h2 id="detailName" class="detail-name"></h2>
+          <p id="detailElement" class="detail-element"></p>
+          <p id="detailDesc" class="detail-desc"></p>
+        </div>
+      </aside>
+
+      <footer class="app-footer">
+        <small>Made with ❤️ — demo, fully client-side</small>
+      </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
