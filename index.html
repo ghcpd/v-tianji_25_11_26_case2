@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12-Zodiac Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <noscript>
+    <div class="no-js">This experience requires JavaScript.</div>
+  </noscript>
+
+  <div class="app" id="app">
+    <header class="app-header">
+      <div class="title-group">
+        <h1 id="app-title">12-Zodiac Explorer</h1>
+        <p id="app-subtitle">Discover traits, elements, and stories.</p>
+      </div>
+      <div class="control-group">
+        <div class="control">
+          <label for="search-input" id="label-search">Search</label>
+          <input type="search" id="search-input" placeholder="Search" />
+        </div>
+        <div class="control">
+          <label for="element-filter" id="label-filter">Element</label>
+          <select id="element-filter">
+            <option value="all">All</option>
+            <option value="Metal">Metal</option>
+            <option value="Wood">Wood</option>
+            <option value="Water">Water</option>
+            <option value="Fire">Fire</option>
+            <option value="Earth">Earth</option>
+          </select>
+        </div>
+        <div class="control toggle-control">
+          <span id="label-language">Language</span>
+          <div class="toggle-buttons" id="language-toggle">
+            <button data-lang="en" class="lang-btn active">EN</button>
+            <button data-lang="zh" class="lang-btn">中文</button>
+          </div>
+        </div>
+        <div class="control toggle-control">
+          <span id="label-theme">Theme</span>
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="zodiac-grid" id="zodiac-grid" aria-live="polite">
+        <!-- Cards injected by script.js -->
+      </section>
+    </main>
+  </div>
+
+  <aside id="detail-panel" class="detail-panel" aria-hidden="true">
+    <div class="detail-content">
+      <button class="close-btn" id="detail-close" aria-label="Close">×</button>
+      <div class="detail-icon" id="detail-icon" aria-hidden="true"></div>
+      <h2 class="detail-title" id="detail-title"></h2>
+      <p class="detail-element" id="detail-element"></p>
+      <p class="detail-description" id="detail-description"></p>
+    </div>
+  </aside>
+  <div id="detail-overlay" class="detail-overlay" aria-hidden="true"></div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
