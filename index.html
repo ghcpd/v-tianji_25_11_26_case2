@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12 Zodiac Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">12 Zodiac Dashboard</h1>
+    <div class="controls">
+      <div class="control">
+        <label for="elementFilter">Element</label>
+        <select id="elementFilter">
+          <option value="all">All</option>
+          <option value="metal">Metal</option>
+          <option value="wood">Wood</option>
+          <option value="water">Water</option>
+          <option value="fire">Fire</option>
+          <option value="earth">Earth</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label for="searchInput">Search</label>
+        <input id="searchInput" type="search" placeholder="Search name or trait..." />
+      </div>
+
+      <div class="control">
+        <button id="langToggle" class="btn">中文</button>
+      </div>
+
+      <div class="control">
+        <label class="switch">
+          <input id="themeToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="grid" class="zodiac-grid" aria-live="polite"></section>
+  </main>
+
+  <aside id="detailPanel" class="detail-panel" aria-hidden="true">
+    <button id="closePanel" class="close">×</button>
+    <div id="detailContent"></div>
+  </aside>
+
+  <div id="overlay" class="overlay hidden"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

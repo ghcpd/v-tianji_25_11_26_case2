@@ -1,0 +1,153 @@
+User: You are a front-end developer working for a cultural-tech startup.
+The company wants to build an interactive 12-Zodiac web dashboard — users can explore zodiac animals visually, click to view details, filter by element, and switch between languages.
+
+You will receive the dataset: auto-generated from zero (no external file needed).
+
+Requirements
+1. Zodiac Cards Display
+Create a 12-card grid (Rat → Pig).
+Each card shows:
+Zodiac icon or placeholder image
+Zodiac name (English + 中文)
+Hovering on a card displays a short tooltip with one key trait.
+2. Zodiac Detail Panel
+Clicking a card opens a slide-in panel or modal showing:
+Zodiac name (English + 中文)
+Element (Metal/Wood/Water/Fire/Earth)
+Short personality description
+Optional small background animation (e.g., glow or fade)
+3. Filters & Search
+Add:
+Element dropdown filter
+Search bar (by name or keyword, EN + 中文)
+Filtering should be instant and client-side (no page reload).
+4. Language Toggle
+Add an English / 中文 toggle; all text should update dynamically.
+5. Theme Mode
+Add a light/dark mode switch with smooth transition animation.
+6. Bonus (Optional)
+Animated transitions when switching zodiac cards or opening detail panels
+Responsive layout:
+Desktop: 4×3 grid
+Mobile: vertical scroll
+Save last used language, theme, and filter selections in localStorage
+💾 Deliverables
+index.html, style.css, script.js (or framework of choice)
+Data must be self-generated, no external JSON required
+Fully runnable locally in a browser
+Readme
+
+GitHub Copilot: Great — I'll build a responsive, animated 12-Zodiac dashboard (cards, filters, search, language toggle, theme, modal, and persistence). Next: create project files and implement HTML/CSS/JS with self-contained data and README.
+
+Created 5 todos
+
+Starting: *Create project files* (1/5)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/index.html)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/style.css)
+
+Starting: *Add HTML structure* (2/5)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/script.js)
+
+Starting: *Add CSS styling* (2/4)
+
+Using "Apply Patch"
+
+
+```
+
+```
+
+
+Using "Apply Patch"
+
+
+```
+
+```
+
+
+Completed: *Add CSS styling* (1/3)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/README.md)
+
+Starting: *Write README* (2/2)
+
+Completed: *Write README* (1/1)
+
+✅ Done — 12-Zodiac interactive dashboard implemented
+
+Perfect! I built a small, fully client-side 12-Zodiac dashboard that meets your requirements: a 12-card grid with hover tooltips, a slide-in detail panel, element filtering, search (EN + 中文), language toggle, theme toggle (light/dark), responsive layout, subtle animations, and localStorage persistence.
+
+What I created (files)
+- index.html — main layout and controls
+- style.css — styling, theme variables, responsive layout, animations
+- script.js — auto-generated dataset, rendering, interactions, persistence
+- README.md — run & customization notes
+
+How to run (💡)
+1. Open index.html in a browser (no server required).
+2. Interact: filter by element, search by name/trait (EN + 中文), toggle language & theme, click cards to open details.
+
+Key features (🔧)
+- Zodiac Cards Display
+  - 12 cards (Rat → Pig) with emoji icons, both EN and 中文 names.
+  - Hover tooltip shows a short trait and a quick snippet of the personality.
+- Zodiac Detail Panel
+  - Click a card to open a slide-in detail panel (name, element, description).
+  - Small animated accent inside the detail panel.
+  - Slide-in panel accessible via keyboard (Enter to open, Esc to close).
+- Filters & Search
+  - Element dropdown filter (All, Metal, Wood, Water, Fire, Earth).
+  - Search bar filters by EN/中文 names or keywords in personality.
+  - Client-side instant filtering (no page reload).
+- Language Toggle
+  - EN ↔ 中文 toggle — updates UI text and content dynamically.
+- Theme Mode
+  - Light/Dark theme toggle using CSS variables with smooth transition.
+- Bonus
+  - Animated fade-in for cards, subtle glowing effect on the active card, and a floating accent in the panel.
+  - Responsive layout:
+    - Desktop: 4×3 grid
+    - Tablet: 3 columns
+    - Mobile: single-column vertical layout
+  - Saves last used language, theme, element filter, and search query in localStorage.
+
+Data
+- All content is self-generated in script.js (no external JSON loaded).
+- Each zodiac object includes: id, en, zh, icon (emoji), element, trait, descEN, descZH.
+
+Customization & Developer Tips (💡)
+- To change dataset, edit the ZODIAC_DATA array inside script.js.
+- Replace emoji icons with image URLs or inline SVGs if you prefer.
+- Adjust the element mapping or translations in script.js.
+- For more elaborate animations or additional filters, extend script.js and style.css.
+
+Notable Implementation Points (⚠️)
+- All text elements are dynamically translated when switching language.
+- Select option values are stored in lower-case (e.g., `metal`, `wood`) to simplify comparisons.
+- Preferences are saved in localStorage under key: `zodiac_dashboard_prefs` and include {lang, theme, element, query}.
+- CSS variables handle theming; `data-theme="dark"` enables dark mode rules.
+
+Files created/updated
+- index.html — structure and controls
+- style.css — variables, transitions, responsive grid, animations
+- script.js — auto-generated data, rendering, events, persistence
+- README.md — usage & run instructions
+
+Next steps / Optional Improvements (💭)
+1. Add images / custom SVG icons for each zodiac animal.
+2. Add sorting options or advanced filter combinations.
+3. Add per-zodiac “birth-year” lookup or calculator.
+4. Add small unit tests or E2E test runner for interactions.
+
+If you’d like, I can now:
+- Add SVG icons and small illustrations for each zodiac.
+- Implement a guided tour / onboarding tooltip.
+- Add an export/import settings feature.
+
+Which follow-up would you prefer?
+
+Made changes.
