@@ -1,0 +1,141 @@
+jitianxiang: Prompt
+You are a front-end developer working for a cultural-tech startup.
+The company wants to build an interactive 12-Zodiac web dashboard — users can explore zodiac animals visually, click to view details, filter by element, and switch between languages.
+
+You will receive the dataset: auto-generated from zero (no external file needed).
+
+Requirements
+1. Zodiac Cards Display
+Create a 12-card grid (Rat → Pig).
+Each card shows:
+Zodiac icon or placeholder image
+Zodiac name (English + 中文)
+Hovering on a card displays a short tooltip with one key trait.
+2. Zodiac Detail Panel
+Clicking a card opens a slide-in panel or modal showing:
+Zodiac name (English + 中文)
+Element (Metal/Wood/Water/Fire/Earth)
+Short personality description
+Optional small background animation (e.g., glow or fade)
+3. Filters & Search
+Add:
+Element dropdown filter
+Search bar (by name or keyword, EN + 中文)
+Filtering should be instant and client-side (no page reload).
+4. Language Toggle
+Add an English / 中文 toggle; all text should update dynamically.
+5. Theme Mode
+Add a light/dark mode switch with smooth transition animation.
+6. Bonus (Optional)
+Animated transitions when switching zodiac cards or opening detail panels
+Responsive layout:
+Desktop: 4×3 grid
+Mobile: vertical scroll
+Save last used language, theme, and filter selections in localStorage
+💾 Deliverables
+index.html, style.css, script.js (or framework of choice)
+Data must be self-generated, no external JSON required
+Fully runnable locally in a browser
+Readme
+
+GitHub Copilot: Created 6 todos
+
+Starting: *Inspect repository & detect tests* (1/6)
+
+Read [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2)
+
+Searched for files matching `**/package.json`, no matches
+
+Searched for files matching `**/tests/**`, no matches
+
+Searched for files matching `**/pytest.ini`, no matches
+
+Completed: *Inspect repository & detect tests* (1/6)
+
+Starting: *Scaffold static web app files* (2/6)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/index.html)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/style.css)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/script.js)
+
+Completed: *Scaffold static web app files* (2/6)
+
+Using "Apply Patch"
+
+
+```
+
+```
+
+
+Completed: *Implement UI layout & styling* (3/6)
+
+Using "Apply Patch"
+
+
+```
+
+```
+
+
+Using "Apply Patch"
+
+
+```
+
+```
+
+
+Completed: *Implement functionality & data* (4/6)
+
+Starting: *Add README documentation* (5/6)
+
+Created [](file:///c%3A/Users/v-tianji/Desktop/ghcpd/v-tianji_25_11_26_case2/README.md)
+
+Completed: *Add README documentation* (5/6)
+
+Starting: *Verify & sanity check* (6/6)
+
+Ran terminal command: node --check script.js
+
+Ran terminal command: node --check "c:\Users\v-tianji\Desktop\ghcpd\v-tianji_25_11_26_case2\script.js"
+
+Ran terminal command: node --check "c:\Users\v-tianji\Desktop\ghcpd\v-tianji_25_11_26_case2\script.js"; echo $LASTEXITCODE
+
+Completed: *Verify & sanity check* (6/6)
+
+## ✅ Summary
+- Built a fully client-side **12-Zodiac dashboard** with a 12-card grid (Rat → Pig), hover tooltips, and responsive layout.
+- Added **slide-in detail panel** (EN + 中文 names, element, localized description) with a subtle glow animation.
+- Implemented **element filter**, **live search** (EN/中文), **language toggle**, and **light/dark theme** with smooth transitions.
+- Persisted **language, theme, filter, search** settings via `localStorage`; animations respect `prefers-reduced-motion`.
+
+## 📁 Files changed
+| File | Description |
+| --- | --- |
+| index.html | App layout, controls, grid container, detail panel scaffolding |
+| style.css | Theming, grid/responsive styles, animations, tooltip, slide-in panel |
+| script.js | Zodiac dataset, rendering, filtering/search, language/theme toggles, panel interactions, persistence |
+| README.md | Usage instructions, features, data notes, persistence schema |
+
+## 🔧 How to run
+- Open index.html directly in a browser, **or**
+- Serve locally (optional):  
+  ```powershell
+  python -m http.server 8000  # then open http://localhost:8000
+  ```
+
+## 🧪 Tests
+- `node --check script.js` → **exit 0** (syntax OK)  
+- No project test suite detected.
+
+## ✨ Notes
+- Uses emoji icons as placeholders; all zodiac data is inline and bilingual.
+- Default theme respects system preference; UI text updates instantly on language switch.
+- Future ideas: pinyin search, year ranges, compatibility insights, audio pronunciations.
+
+**Completion:** All requirements implemented; syntax-checked and documented.
+
+Made changes.
