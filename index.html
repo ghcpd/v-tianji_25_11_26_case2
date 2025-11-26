@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Zodiac Dashboard | 十二生肖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="app-title" data-en="Chinese Zodiac Dashboard" data-zh="十二生肖仪表板">Chinese Zodiac Dashboard</h1>
+            
+            <div class="controls">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                
+                <!-- Language Toggle -->
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                    <span class="lang-text">中文</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Filters & Search -->
+        <div class="filter-section">
+            <div class="search-wrapper">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search zodiac..."
+                    data-placeholder-en="Search zodiac..."
+                    data-placeholder-zh="搜索生肖..."
+                >
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="filter-wrapper">
+                <label for="elementFilter" class="filter-label" data-en="Element:" data-zh="元素:">Element:</label>
+                <select id="elementFilter" class="element-filter">
+                    <option value="all" data-en="All Elements" data-zh="全部元素">All Elements</option>
+                    <option value="Metal" data-en="Metal" data-zh="金">Metal</option>
+                    <option value="Wood" data-en="Wood" data-zh="木">Wood</option>
+                    <option value="Water" data-en="Water" data-zh="水">Water</option>
+                    <option value="Fire" data-en="Fire" data-zh="火">Fire</option>
+                    <option value="Earth" data-en="Earth" data-zh="土">Earth</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Zodiac Cards Grid -->
+        <div class="zodiac-grid" id="zodiacGrid">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <p data-en="No zodiac animals found" data-zh="未找到生肖">No zodiac animals found</p>
+        </div>
+
+        <!-- Detail Panel -->
+        <div class="detail-panel" id="detailPanel">
+            <button class="close-btn" id="closePanel" aria-label="Close panel">✕</button>
+            <div class="detail-content">
+                <div class="detail-header">
+                    <div class="detail-icon" id="detailIcon"></div>
+                    <div class="detail-title-section">
+                        <h2 class="detail-name" id="detailName"></h2>
+                        <p class="detail-element" id="detailElement"></p>
+                    </div>
+                </div>
+                <div class="detail-body">
+                    <h3 class="detail-section-title" data-en="Personality Traits" data-zh="性格特征">Personality Traits</h3>
+                    <p class="detail-description" id="detailDescription"></p>
+                    
+                    <h3 class="detail-section-title" data-en="Key Characteristics" data-zh="主要特点">Key Characteristics</h3>
+                    <ul class="detail-traits" id="detailTraits"></ul>
+                </div>
+                <div class="detail-glow"></div>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
