@@ -1,0 +1,78 @@
+/* CSS for 12 Zodiac Dashboard */
+
+:root{
+  --bg: #f7f7f7;
+  --card: #fff;
+  --text: #222;
+  --muted: #666;
+  --accent: #3b82f6;
+  --glass: rgba(255,255,255,0.6);
+  --panel-bg: #fff;
+}
+   .muted{color:var(--muted);font-size:0.95rem;padding:1rem}
+   .panel-accent{animation:float 2.5s ease-in-out infinite}
+   @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+[data-theme="dark"]{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --text: #e6eef8;
+  --muted: #aeb7c5;
+  --accent: #60a5fa;
+  --glass: rgba(255,255,255,0.04);
+  --panel-bg: #071029;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial;padding:0;background:var(--bg);color:var(--text);}
+.app-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:linear-gradient(90deg,var(--glass),transparent);backdrop-filter: blur(6px);position:sticky;top:0;z-index:5}
+.app-title{margin:0;font-size:1.25rem}
+.controls{display:flex;gap:0.5rem;align-items:center}
+.control{display:flex;flex-direction:column;font-size:0.8rem}
+.control label{font-size:0.7rem;color:var(--muted)}
+.control input[type=search], .control select{padding:0.35rem 0.5rem;border-radius:6px;border:1px solid rgba(0,0,0,0.08);min-width:160px}
+.control button.btn{padding:0.35rem 0.6rem;border-radius:6px;background:var(--accent);border:none;color:white;cursor:pointer}
+
+.switch{display:inline-block;width:44px;height:26px;position:relative}
+.switch input{display:none}
+.slider{position:absolute;top:0;left:0;right:0;bottom:0;background:#ccc;border-radius:999px;transition:all .25s}
+.slider:before{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;background:white;border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,0.2);transition:all .25s}
+.switch input:checked + .slider{background:var(--accent)}
+.switch input:checked + .slider:before{transform:translateX(18px)}
+
+main{padding:1rem}
+.zodiac-grid{display:grid;gap:1rem;grid-template-columns:repeat(4,1fr)}
+
+.zodiac-card{background:var(--card);border-radius:12px;padding:1rem;display:flex;flex-direction:column;align-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(16,24,40,0.06);transition:transform .18s ease, box-shadow .18s ease;position:relative}
+.zodiac-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(16,24,40,0.18)}
+.zodiac-icon{font-size:2.2rem;background:linear-gradient(135deg,var(--accent),#b794f4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.zodiac-name{margin-top:0.5rem;font-weight:600}
+.zodiac-sub{font-size:0.85rem;color:var(--muted)}
+.tooltip{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(100% + 10px);background:var(--text);color:white;padding:6px 10px;border-radius:6px;font-size:0.8rem;opacity:0;pointer-events:none;transition:opacity .12s ease}
+.zodiac-card:hover .tooltip{opacity:1;}
+
+.detail-panel{position:fixed;right:-420px;top:0;width:380px;height:100%;background:var(--panel-bg);box-shadow:-12px 0 40px rgba(2,6,23,0.35);padding:1rem;transition: right .3s cubic-bezier(0.2,0.9,0,1);z-index:10;overflow:auto}
+.detail-panel.open{right:0}
+.detail-panel .close{position:absolute;left:6px;top:6px;border:none;background:transparent;color:var(--muted);font-size:28px}
+.detail-panel .zodiac-title{display:flex;align-items:center;gap:0.75rem;font-size:1.4rem;margin-top:0}
+.detail-panel .element{padding:4px 10px;border-radius:999px;background:rgba(0,0,0,0.06);font-weight:600}
+.detail-panel .desc{margin-top:0.75rem;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(2,6,23,0.4);backdrop-filter: blur(2px);z-index:9}
+.hidden{display:none}
+
+/* Responsive */
+@media (max-width: 900px){
+  .zodiac-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width: 680px){
+  .controls{flex-wrap:wrap;gap:0.5rem}
+  .zodiac-grid{grid-template-columns:repeat(1,1fr)}
+  .detail-panel{width:100%;right:-100%}
+}
+
+/* subtle glowing animation for active zodiac */
+.glow{box-shadow:0 0 18px rgba(96,165,250,0.18),0 8px 30px rgba(59,130,246,0.06);}
+
+/* small card fade-in animation */
+.fade-in{animation:fadeIn 350ms ease forwards}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
